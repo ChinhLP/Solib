@@ -1,23 +1,20 @@
 package com.example.so_solid.singleresponsibilityprinciple
 
-class OrderFacade(
-    private val orderNotificationSender: MessageNotificationSender,
-    private val orderInvoiceGenerator: MessageInvoiceGenerator,
-    private val orderRepository: MessageRepository
+class MessageViewModel(
+    private val reportReader: ReportReader,
+    private val reportHandle: ReportHandle,
+    private val reportResult: ReportResult
 ) {
 
-    fun sendNotification(message: Message2) {
-        // sends notification about order updates to the user.
-        orderNotificationSender.sendNotification(message)
+    fun readDataReport(report: Report) {
+        reportReader.readDataFromDB(report)
     }
 
-    fun generateInvoice(message: Message2) {
-        // generates invoice
-        orderInvoiceGenerator.generateMessage(message)
+    fun processDataReport(report: Report) {
+        reportHandle.processData(report)
     }
 
-    fun save(message: Message2) {
-        // insert/update data in the db
-        orderRepository.save(message)
+    fun printReportReport(report: Report) {
+        reportResult.printReport(report)
     }
 }

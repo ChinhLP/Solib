@@ -1,27 +1,24 @@
 package com.example.so_solid.singleresponsibilityprinciple
 
-data class Message2(
+data class Report(
     val id: Long,
-    val name: String,
+    val content: String,
 )
 
-class MessageNotificationSender {
+class ReportReader {
 
-    fun sendNotification(message: Message2) {
-        // send order notifications
+    fun readDataFromDB(report: Report) {
     }
 }
 
-class MessageInvoiceGenerator {
+class ReportHandle {
 
-    fun generateMessage(message: Message2) {
-        // generate invoice
+    fun processData(report: Report) {
     }
 }
 
-class MessageRepository {
+class ReportResult {
 
-    fun save(message: Message2) {
-        // insert/update data in the db.
+    fun printReport(report: Report) {
     }
 }

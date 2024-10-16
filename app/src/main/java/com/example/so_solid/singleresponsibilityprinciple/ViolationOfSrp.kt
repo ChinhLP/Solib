@@ -1,13 +1,13 @@
 package com.example.so_solid.singleresponsibilityprinciple
 
-class Message1 {
+class ReportManager {
 
-    fun sendMessageUpdateNotification() {
+    fun readDataFromDB() {
     }
 
-    fun generateMessage() {
+    fun processData() {
     }
 
-    fun save() {
+    fun printReport() {
     }
 }
